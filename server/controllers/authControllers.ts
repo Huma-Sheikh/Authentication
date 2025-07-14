@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import User from '../models/User';
 import bcrypt from 'bcryptjs';
 import { generateToken } from '../utils/generateToken';
-
+//Register Api
 export const registerUser = async (req: Request, res: Response) => {
   const { name, email, password, age, gender } = req.body;
   try {
@@ -25,7 +25,7 @@ export const registerUser = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
-
+//Login Api
 export const loginUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
   try {

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import InputField from '../Components/InputField';
 import { sanitizeInput } from '../utils/helper';
 import { emailRegex, passwordRegex } from '../utils/validator';
-import './form.css';
+import './SignIn.css'
 import axios from 'axios';
 
 const SignIn: React.FC = () => {
@@ -16,14 +16,14 @@ const SignIn: React.FC = () => {
 
   const validate = () => {
     const newErrors: { [key: string]: string } = {};
-    if (!emailRegex.test(sanitizeInput(formData.email))) newErrors.email = 'Invalid email';
-    if (!passwordRegex.test(formData.password)) newErrors.password = 'Invalid password';
+    if (!emailRegex?.test(sanitizeInput(formData?.email))) newErrors.email = 'Invalid email';
+    if (!passwordRegex?.test(formData?.password)) newErrors.password = 'Invalid password';
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return Object.keys(newErrors)?.length === 0;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: sanitizeInput(e.target.value) });
+    setFormData({ ...formData, [e?.target?.name]: sanitizeInput(e?.target?.value) });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,25 +31,24 @@ const SignIn: React.FC = () => {
     if (validate()) {
       try {
         const res = await axios.post('http://localhost:5000/api/auth/login', formData);
-        localStorage.setItem('token', res.data.token);
-        localStorage.setItem('user', JSON.stringify(res.data));
+        localStorage.setItem('token', res?.data?.token);
+        localStorage.setItem('user', JSON?.stringify(res?.data));
         navigate('/dashboard');
       } catch (error: any) {
-        alert(error.response?.data?.message || 'Login failed');
+        alert(error?.response?.data?.message || 'Login failed');
       }
     }
   };
 
   return (
     <div className="signup-container">
-      <div className="signup-left">
         <form onSubmit={handleSubmit} className="signup-form">
           <h2>Sign In</h2>
           <InputField
             label="Email"
             type="email"
             name="email"
-            value={formData.email}
+            value={formData?.email}
             onChange={handleChange}
             error={errors.email}
           />
@@ -57,23 +56,15 @@ const SignIn: React.FC = () => {
             label="Password"
             type="password"
             name="password"
-            value={formData.password}
+            value={formData?.password}
             onChange={handleChange}
-            error={errors.password}
+            error={errors?.password}
           />
           <button type="submit">Login</button>
         </form>
       </div>
-      <div className="signup-right">
-        <img src="/side.png" alt="Login Illustration" />
-        <p>Securely login to your account</p>
-        <div className="icons">
-          <i className="fab fa-facebook"></i>
-          <i className="fab fa-twitter"></i>
-          <i className="fab fa-instagram"></i>
-        </div>
-      </div>
-    </div>
+      
+   
   );
 };
 

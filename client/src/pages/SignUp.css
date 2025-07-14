@@ -1,0 +1,163 @@
+/* signup.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #a084ff, #f4eaff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.signup-container {
+  background-color: white;
+  padding: 1.5rem 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 550px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.head1 {
+  text-align: center;
+  color: #5f3dc4;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* === Email + Password side-by-side === */
+.input-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.input-half {
+  flex: 1;
+}
+
+/* === Input Fields === */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s;
+  height: 50px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #7c4dff;
+  box-shadow: 0 0 5px rgba(124, 77, 255, 0.4);
+}
+
+/* === Gender Radio Buttons === */
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.3rem;
+}
+
+.radio-group label {
+  font-size: 0.95rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+input[type="radio"] {
+  accent-color: #7c4dff;
+  cursor: pointer;
+}
+
+/* === Submit Button === */
+button[type="submit"] {
+  padding: 0.9rem;
+  border: none;
+  background-color: #7c4dff;
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #5f3dc4;
+}
+
+/* === Error Text === */
+.error {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  padding-top: 0.2rem;
+}
+
+/* === Switch Auth Text === */
+.switch-auth {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.switch-auth span {
+  color: #7c4dff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .input-row {
+    flex-direction: column;
+  }
+
+  .signup-container {
+    padding: 1.5rem 1.2rem;
+    border-radius: 10px;
+  }
+
+  .head1 {
+    font-size: 1.6rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    height: 50px;
+  }
+
+  button[type="submit"] {
+    font-size: 0.95rem;
+  }
+}

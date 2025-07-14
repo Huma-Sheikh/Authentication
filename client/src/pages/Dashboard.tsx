@@ -41,13 +41,13 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     const stored = localStorage.getItem('user');
-    if (stored) setUser(JSON.parse(stored));
+    if (stored) setUser(JSON?.parse(stored));
     else navigate('/signin');
 
     const fetchUsers = async () => {
       try {
         const res = await axios.get('http://localhost:5000/api/auth/users');
-        const usersWithKey = res.data.map((u: any, index: number) => ({
+        const usersWithKey = res?.data?.map((u: any, index: number) => ({
           ...u,
           key: index + 1,
         }));
