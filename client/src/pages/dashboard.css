@@ -1,0 +1,75 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9fc;
+  overflow-x: hidden;
+}
+
+/* Wrapper for sidebar + content */
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Content area */
+.dashboard-content {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+  max-height: 100vh;
+  transition: padding 0.3s ease;
+}
+
+.dashboard-content h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  transition: font-size 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .dashboard-content {
+    padding: 25px 30px;
+  }
+
+  .dashboard-content h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  .dashboard-content h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 15px;
+  }
+
+  .dashboard-content h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+}
