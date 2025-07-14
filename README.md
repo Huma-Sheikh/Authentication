@@ -46,33 +46,6 @@ A modern, full-stack authentication system built using   React  ,   TypeScript  
 
  
 
-📦project-root
-┣ 📁client
-┃ ┣ 📁components
-┃ ┃ ┗ 📄InputField.tsx
-┃ ┣ 📁pages
-┃ ┃ ┣ 📄SignUp.tsx
-┃ ┃ ┣ 📄SignIn.tsx
-┃ ┃ ┗ 📄Dashboard.tsx
-┃ ┣ 📁utils
-┃ ┃ ┣ 📄validator.ts
-┃ ┃ ┗ 📄helper.ts
-┃ ┗ 📄App.tsx
-┣ 📁server
-┃ ┣ 📁controllers
-┃ ┃ ┗ 📄authControllers.ts
-┃ ┣ 📁models
-┃ ┃ ┗ 📄User.ts
-┃ ┣ 📁routes
-┃ ┃ ┗ 📄authRoutes.ts
-┃ ┗ 📄server.ts
-┣ 📄README.md
-┗ 📄.env
-
- `
-
- 
-
    🛠️ Installation
 
     🔧 Backend Setup
@@ -103,17 +76,6 @@ npm run dev
 cd client
 npm install
 npm start
- 
-
- 
-
-   📦 API Endpoints
-
-| Method | Endpoint             | Description       |
-|    |       -- |      -- |
-| POST   | `/api/auth/register` | User registration |
-| POST   | `/api/auth/login`    | User login        |
-| GET    | `/api/auth/users`    | Fetch all users   |
 
 
  
